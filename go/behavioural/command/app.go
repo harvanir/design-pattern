@@ -5,6 +5,8 @@ import (
 	"log"
 )
 
+var sai Invoker
+
 func Setup() {
 	r := newHttpClient()
 	sai = &serviceAvailabilityInvoker{

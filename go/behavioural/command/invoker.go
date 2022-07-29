@@ -1,29 +1,14 @@
 package command
 
-type (
-	// Invoker - Invoker
-	Invoker interface {
-		On()
-		OnIbft()
-		OnTopup()
-		OnKyc()
-		Off()
-		OffIbft()
-		OffTopup()
-		OffKyc()
-		Undo()
-	}
-
-	// Invoker implementation
-	serviceAvailabilityInvoker struct {
-		onIbft   Command
-		offIbft  Command
-		onTopup  Command
-		offTopup Command
-		onKyc    Command
-		offKyc   Command
-	}
-)
+// Invoker implementation
+type serviceAvailabilityInvoker struct {
+	onIbft   Command
+	offIbft  Command
+	onTopup  Command
+	offTopup Command
+	onKyc    Command
+	offKyc   Command
+}
 
 func (sa *serviceAvailabilityInvoker) On() {
 	sa.onIbft.Execute()

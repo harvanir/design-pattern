@@ -2,15 +2,6 @@ package command
 
 import "log"
 
-type (
-	// Receiver - external code
-	Receiver interface {
-		call(url string, requestBody interface{})
-	}
-)
-
-var sai Invoker
-
 // HttpClient - receiver
 type HttpClient struct{}
 
